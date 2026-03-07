@@ -46,3 +46,7 @@ backend/model/*.npy
 # project notes (local only)
 temp.md
 backend.md
+
+# python cache
+__pycache__/
+*.pyc
