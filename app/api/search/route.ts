@@ -1,20 +1,18 @@
-import { searchArticles } from '@/app/lib/elasticsearch';
+import { searchArticles, SearchMode } from '@/app/lib/elasticsearch';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
-  const { query, limit = 10, page = 1 } = await req.json();
+  const { query, top = 10, mode = 'synonym' } = await req.json();
 
-  const skip = (page - 1) * limit;
+  if (!query || typeof query !== 'string' || query.trim() === '') {
+    return NextResponse.json({ error: 'Geçerli bir arama terimi giriniz.' }, { status: 400 });
+  }
 
   try {
-    const results = await searchArticles(query, skip, limit);
-
-    return NextResponse.json({
-      results,
-      totalResults: results.length,
-    });
+    const data = await searchArticles(query.trim(), mode as SearchMode, top);
+    return NextResponse.json(data);
   } catch (error) {
-    console.error('Search failed:', error);
-    return NextResponse.json({ error: 'Search failed' }, { status: 500 });
+    console.error('Arama başarısız:', error);
+    return NextResponse.json({ error: 'Arama başarısız oldu.' }, { status: 500 });
   }
 }
