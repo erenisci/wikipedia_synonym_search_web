@@ -1,5 +1,5 @@
 {
-  "name": "wikipedia_synonyms_search_frontend",
+  "name": "wikipedia_synonyms_search_web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,14 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@elastic/elasticsearch": "^8.16.2",
     "next": "15.0.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.0.2"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@types/elasticsearch": "^5.0.43",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

@@ -38,3 +38,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# backend model files (large binary files, do not commit)
+backend/model/*.model
+backend/model/*.npy
+
+# project notes (local only)
+temp.md
+backend.md
