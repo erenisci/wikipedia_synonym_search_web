@@ -2,35 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global scrollbar gizle */
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 
+/* Özel scrollbar - sağ panel içerik alanı */
 .custom-scrollbar {
-  overflow-y: scroll;
-  height: 24rem;
+  overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #3b82f6 #1f2937;
-  border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
   border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #3b82f6;
   border-radius: 10px;
-  transition: background-color 0.3s ease;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #3b82f6;
+  background-color: #60a5fa;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #333;
+  background: #1f2937;
   border-radius: 10px;
 }
